@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B. Ajmal Buhari | Administrative & MIS Manager Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-deep: #030712;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.25);
+            --accent: #818cf8;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 40%);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(16px);
+            background: rgba(3, 7, 18, 0.8);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--bg-deep);
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            box-shadow: 0 0 20px var(--primary-glow);
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+
+        header.hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .metric-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .metric-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .metric-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        section {
+            padding: 6rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px -10px var(--primary-glow);
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 3.5rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--bg-deep);
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            border-color: var(--primary);
+        }
+
+        .job-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .company-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0.5rem 0 1.25rem;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .job-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .accomplishments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .acc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .acc-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .acc-number {
+            font-family: 'Fira Code', monospace;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .acc-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .acc-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .edu-cert-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-container, .edu-cert-layout {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .list-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .list-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .list-card:hover {
+            border-color: var(--primary);
+        }
+
+        .list-card i {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-top: 0.2rem;
+        }
+
+        .list-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .list-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 5%;
+            text-align: center;
+            background: rgba(3, 7, 18, 0.9);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: var(--bg-deep);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="nav-brand">B. Ajmal Buhari</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Expertise</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#accomplishments">Impact</a></li>
+            <li><a href="#education">Credentials</a></li>
+        </ul>
+        <a href="mailto:ajmalaji81@live.com" class="cta-btn">Let's Connect</a>
+    </nav>
+
+    <header class="hero" id="about">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-sparkles"></i> Administrative & MIS Manager
+                </div>
+                <h1>Engineering Data Integrity & <span>Workflow Automation</span></h1>
+                <p>Results-driven management professional with an MBA and 8+ years of expertise directing office administration, advanced MIS operations, and scalable digital reporting frameworks.</p>
+                <div class="hero-actions">
+                    <a href="#experience" class="cta-btn">Explore Experience</a>
+                    <a href="mailto:ajmalaji81@live.com" class="btn-secondary">Direct Inquiry</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="card-header-bar">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">8+</div>
+                        <div class="metric-label">Years Experience</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Time Saved via n8n</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Data Integrity</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">MBA</div>
+                        <div class="metric-label">Post Graduate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2>Core Expertise & Competencies</h2>
+            <p>Bridging traditional administrative management with cutting-edge technical automation tools.</p>
+        </div>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-table-cells"></i></div>
+                <h3>Advanced MS Excel & MIS</h3>
+                <p>Expert in VLOOKUP, Pivot Tables, Power Query, custom number formatting, and formula automation to manage inventory and complex datasets error-free.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>Workflow Automation & AI</h3>
+                <p>Leveraging n8n, Power Automate, Claude, and Gemini to automate recurring operations, draft correspondence, and streamline administrative workflows.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-folder-tree"></i></div>
+                <h3>Office Admin & Document Control</h3>
+                <p>Skilled in calendar management, official correspondence, digital/physical filing systems, and inter-departmental coordination across Sales, Accounts & Operations.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-calculator"></i></div>
+                <h3>Accounting & Business Tools</h3>
+                <p>Proficient in Tally, Busy accounting software, full MS Office Suite, and professional record keeping backed by English Typewriting (Higher).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">
+            <h2>Professional Journey</h2>
+            <p>A proven track record of operational leadership across fast-paced organizations.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="job-title">Administrative & MIS Manager</div>
+                    <div class="company-meta">
+                        <span>Aarka Agencies, Puducherry, India</span>
+                        <span>06/2023 - Present</span>
+                    </div>
+                    <p class="job-desc">Directing office administration, MIS operations, sales registers, collection reports, and stock distribution data workflows. Enforcing documentation standard operating procedures (SOPs) and streamlining inter-departmental coordination.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="job-title">Operations & Administrative Manager</div>
+                    <div class="company-meta">
+                        <span>GP Communications, Puducherry, India</span>
+                        <span>10/2019 - 06/2023</span>
+                    </div>
+                    <p class="job-desc">Managed daily telecommunication operations, administrative correspondence, and staff schedules while optimizing office record management and inventory control procedures.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="job-title">Office Manager</div>
+                    <div class="company-meta">
+                        <span>Smart Vikasa, Puducherry, India</span>
+                        <span>05/2019 - 09/2019</span>
+                    </div>
+                    <p class="job-desc">Oversaw general office functions, client inquiries, billing documentation, and administrative reporting frameworks to support business growth.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="job-title">Admin Assistant</div>
+                    <div class="company-meta">
+                        <span>Overseas Diesel Sales & Service, Puducherry, India</span>
+                        <span>08/2017 - 04/2019</span>
+                    </div>
+                    <p class="job-desc">Handled routine data entry, invoice tracking, physical and digital record-keeping, and coordination between sales and accounting departments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accomplishments">
+        <div class="section-header">
+            <h2>Key Accomplishments</h2>
+            <p>Measurable impact delivered through systemic efficiency and automation.</p>
+        </div>
+        <div class="accomplishments-grid">
+            <div class="acc-card">
+                <div class="acc-number">01</div>
+                <h3>Workflow Automation</h3>
+                <p>Automated recurring operational reporting workflows using n8n and advanced Excel Power Query, reducing manual administrative data entry time by over 40%.</p>
+            </div>
+            <div class="acc-card">
+                <div class="acc-number">02</div>
+                <h3>Centralized Database</h3>
+                <p>Designed and maintained centralized digital filing systems and customer databases, achieving 100% data integrity and drastically cutting document retrieval time.</p>
+            </div>
+            <div class="acc-card">
+                <div class="acc-number">03</div>
+                <h3>Streamlined Billing</h3>
+                <p>Streamlined invoice processing, budget tracking, and supply inventory logs across multiple organizational roles, preventing billing delays and overhead costs.</p>
+            </div>
+            <div class="acc-card">
+                <div class="acc-number">04</div>
+                <h3>Cross-Functional SOPs</h3>
+                <p>Standardized cross-departmental communication and documentation protocols between Sales, Accounts, and Operations, accelerating discrepancy resolution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header">
+            <h2>Education & Credentials</h2>
+            <p>Academic foundation and professional certifications.</p>
+        </div>
+        <div class="edu-cert-layout">
+            <div class="list-group">
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Education</h3>
+                <div class="list-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <div>
+                        <h4>Master of Business Administration (MBA)</h4>
+                        <p>Pondicherry Institute of Cooperative Management, Puducherry (2016)</p>
+                    </div>
+                </div>
+                <div class="list-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <div>
+                        <h4>Diploma in Labour Law with Admin. Law</h4>
+                        <p>Annamalai University, Tamil Nadu (2015)</p>
+                    </div>
+                </div>
+                <div class="list-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <div>
+                        <h4>Bachelor of Business Administration (BBA)</h4>
+                        <p>Saradha Gangadharan College, Puducherry (2014)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-group">
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Certifications</h3>
+                <div class="list-card">
+                    <i class="fa-solid fa-certificate"></i>
+                    <div>
+                        <h4>Data Analytics & Artificial Intelligence</h4>
+                        <p>NoviTech Learning Hub (Jan 2026)</p>
+                    </div>
+                </div>
+                <div class="list-card">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <div>
+                        <h4>The Fundamentals of Digital Marketing</h4>
+                        <p>IAB Europe & The Open University (Mar 2023)</p>
+                    </div>
+                </div>
+                <div class="list-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>
+                        <h4>Google Analytics & Content Marketing Basics</h4>
+                        <p>Great Learning (Mar 2023)</p>
+                    </div>
+                </div>
+                <div class="list-card">
+                    <i class="fa-solid fa-computer"></i>
+                    <div>
+                        <h4>Office Automation (Tally & MS Office)</h4>
+                        <p>Apollo Computer Education Ltd (Jan 2014)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h2>Let's Drive Operational Excellence Together</h2>
+            <p>Get in touch for administrative leadership, MIS management, or workflow automation opportunities.</p>
+            <div class="social-links">
+                <a href="mailto:ajmalaji81@live.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:+918220339910" title="Phone"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://linkedin.com/in/ajmal-buhari" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 B. Ajmal Buhari. All rights reserved. Built with modern web standards.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
